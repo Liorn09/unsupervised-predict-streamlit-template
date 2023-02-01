@@ -41,6 +41,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 movies_df = pd.read_csv('resources/data/movies.csv',sep = ',')
 ratings_df = pd.read_csv('resources/data/ratings.csv')
 ratings_df.drop(['timestamp'], axis=1,inplace=True)
+df_mov = movies_df.iloc[:4000,:]
+df_rat = ratings_df.iloc[:7000,:]
 
 # We make use of an SVD model trained on a subset of the MovieLens 10k dataset.
 model=pickle.load(open('resources/models/SVD.pkl', 'rb'))
@@ -67,7 +69,7 @@ def prediction_item(item_id):
 
     predictions = []
     for ui in a_train.all_users():
-        predictions.append(model.predict(iid=item_id,uid=ui, verbose = False))
+        predictions.append(model.predict(iid=item_id, uid=ui, verbose = False))
     return predictions
 
 def pred_movies(movie_list):
@@ -93,7 +95,7 @@ def pred_movies(movie_list):
         predictions = prediction_item(item_id = i)
         predictions.sort(key=lambda x: x.est, reverse=True)
         # Take the top 10 user id's from each movie with highest rankings
-        for pred in predictions[:10]:
+        for pred in predictions[:100]:
             id_store.append(pred.uid)
     # Return a list of user id's
     return id_store
