@@ -386,13 +386,13 @@ either of the two systems to generate predicitons for movies they'd love to watc
 		
         st.write("""Stay in the know on matters relating to movie releases, actors,
         awards, financing. never miss an update on upcoming movies and a chance to 
-        be one of the first people to watch on big screen. No more about the movie
+        be one of the first people to watch on big screen. Know more about the movie
         industry around the world with a single click.
 
 		"""
 		)
         st.write('##')
-        st.image(news_image, width=600, caption="Image by https://www.freepik.com/free-photo/newspaper-background-concept_29016059.htm#query=news&position=10&from_view=search&track=sph")
+        st.image(news_image, width=600, caption=" Source: https://www.freepik.com/")
         st.write('---')
         st.write("""
 		Click the button below to to get a round up of the latest news in chimate change and global warming from the web.
@@ -440,7 +440,7 @@ either of the two systems to generate predicitons for movies they'd love to watc
             st.subheader("Hi :wave:, we are Forefront AI")
             st.image(logo_a, use_column_width=True)
             st.write('---')
-            st.title('An AI based/ Data science based team focused on creating real-world solutions')
+            st.title('An AI/Data Science based team focused on creating real-world solutions')
             st.write(""" \n We are passionate about the use of data to help
 			companies to make informed decisions""")
 		
