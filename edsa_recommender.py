@@ -207,7 +207,7 @@ either of the two systems to generate predicitons for movies they'd love to watc
         images = ['resources/imgs/info.png']
         for i in images:
             st.image(i, use_column_width=True)
-        filters = ["Top rated Movies", "High Budget Movies"]
+        filters = ["None", "Top rated Movies"]
         filter_selection = st.selectbox("Fact Check", filters)
         if filter_selection == "Top rated Movies":
             movie_list = pd.read_csv('resources/data/movies.csv')
@@ -457,7 +457,7 @@ either of the two systems to generate predicitons for movies they'd love to watc
 					<ul> We create viable AI solutions to clients to activate better level of productivity while reducing cost
 					 <li> - Leveraging available data to analyse trends and usage. </li>
 					 <li> - Building Machine learning models to generate predictions on users' behavior. </li>
-					 <li> - Buildiin recommender engines to recommend products to users.
+					 <li> - Building recommender engines to recommend products to users. </li>
                      <li> - Building classification models to classify and categorise users, items and services. </li>
 					 <li> - Building ready to use web applications for solution deployment. </li>
                      </ul>
@@ -478,15 +478,15 @@ either of the two systems to generate predicitons for movies they'd love to watc
 			# import the image
                 st.image(movie_image)
             with text_column:
-                st.subheader("Generate movie predictions on our streamlit web application")
-                st.write(
+                st.subheader("Generate movie predictions on our streamlit web application in few steps")
+                st.markdown(
 					"""
-					Select from list of movies you love and get recommendations on movies we think you will like;
-					- You will first have to select the filtering method you'd prefer to use from a list of either
-                    - Content based or
-                    - Collaborative
-                    - Then click on recommend
-				""")
+					<ul> 
+					<li> - Pick from list of your favourite movies
+                    <li> - Select prefered algorithm between Content based or collaborative
+                    <li> - Click on Recommend
+                    </ul>
+				""", unsafe_allow_html= True)
 			
             with st.container():
                 st.write('---')
